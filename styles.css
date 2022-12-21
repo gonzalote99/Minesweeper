@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+:root {
+  --manin-color: rgb(25, 25, 25);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html,
+body {
+  background-color: #ffffff;
+}
+
+body {
+  color: var(--manin-color);
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+
+.header {
+  font-size: 2.6em;
+  margin-top: 0.4em;
+  margin-bottom: 0.2em;
+  font-family: "Fredoka One", cursive;
+  white-space: nowrap;
+}
+
+
+.header span {
+  position: relative;
+  display: inline-block;
+  margin: -0.307rem;
+
+}
+
+.header:hover > span {
+  animation: wavy 1s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes wavy {
+  0%,
+  40%,
+100% {
+  transform: translateY(0);
+}
+20% {
+  transform: translateY(-8px);
+}
+}
+
+
+canvas {
+  animation: appear 0.8s;
+}
+
+
+@keyframes appear {
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+}
+
+#board {
+  height: 441px;
+}
+
+#container {
+  padding: 0;
+  margin-top: -1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+button {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.6rem 0.8rem;
+  border-radius: 40px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  background-color: var(--manin-color);
+  border: 4px solid var(--manin-color);
+  width: 7em;
+  position: relative;
+   
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+  color: var(--manin-color);
+  border: 4px dotted var(--manin-color);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+#stats-panel {
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 40px;
+  padding: 1.1rem;
+  border: 4px dotted var(--manin-color);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  display: grid;
+  grid-template-columns: 1fr, 1fr; 
+  max-width: fit-content;
+}
+
+#stats-button {
+  margin-top: 0.75rem;
+}
+
+#stats-panel > button {
+  margin-top: 0.5rem;
+  margin-bottom: -0.3rem;
+  grid-column: span 2;
+  width: 100%;
+  transform: scale(0.7);
+}
+
+.label {
+  text-align: end;
+  margin-right: 0.5rem;
+}
+
+.value {
+  font-weight: 400;
+  text-align: left;
+  margin-left: 0.5rem;
+}
+
+#message {
+  color: rgb(255, 176, 46);
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-align: center;
+ position: absolute;
+ right: -90px;
+ top: 32px;
+ line-height: 20px;
+
+
+
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  transform: scale(0.8);
+  animation: appear 0.8s;
+}
+
+
+footer:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-4deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(4deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(4deg);
+  }
+  50% {
+    transform: translate(-1px, -2px) rotate(-4deg);
+  }
+  60% {
+    transform: translate(1px, -1px) rotate(-4deg);
+  }
+  70% {
+    transform: translate(-1px, -2px) rotate(-4deg);
+  }
+  80% {
+    transform: translate(-1px, -2px) rotate(-4deg);
+  }
+  90% {
+    transform: translate(-1px, -2px) rotate(-4deg);
+  }
+  100% {
+    transform: translate(-1px, -2px) rotate(-4deg);
+  }
+
+
+
+}
